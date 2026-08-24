@@ -15,6 +15,9 @@ const sans = Montserrat({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(
+    "https://almeida-kehl-advocacia.leandrocaetanopivova.chatgpt.site",
+  ),
   title: "Almeida Kehl Advogados Associados | Florianópolis",
   description:
     "Advocacia especializada em Florianópolis, com atendimento presencial e online nas áreas trabalhista, civil, família, sucessões e previdenciário.",
