@@ -1,5 +1,6 @@
 import Image from "next/image";
 import ContactForm from "./ContactForm";
+import ScrollReveal from "./ScrollReveal";
 
 const phoneDisplay = "(48) 3304-0762";
 const whatsappDisplay = "(48) 98822-1886";
@@ -68,6 +69,7 @@ const steps = [
 export default function Home() {
   return (
     <main>
+      <ScrollReveal />
       <header className="site-header">
         <a
           className="brand"
@@ -94,7 +96,7 @@ export default function Home() {
       </header>
 
       <section className="hero section-shell" id="top">
-        <div className="hero-copy">
+        <div className="hero-copy" data-reveal="left">
           <p className="eyebrow">Canasvieiras · Florianópolis · SC</p>
           <div className="nameplate">
             <span />
@@ -118,6 +120,7 @@ export default function Home() {
 
         <div
           className="hero-visual office-visual"
+          data-reveal="right"
           aria-label="Identidade visual Almeida Kehl Advocacia"
         >
           <Image
@@ -140,26 +143,26 @@ export default function Home() {
       </section>
 
       <section className="proof-strip" aria-label="Credenciais">
-        <article>
+        <article data-reveal>
           <strong>2013</strong>
           <span>atuação consolidada</span>
         </article>
-        <article>
+        <article data-reveal>
           <strong>Online</strong>
           <span>consulta à distância</span>
         </article>
-        <article>
+        <article data-reveal>
           <strong>Jurerê</strong>
           <span>Florianópolis, SC</span>
         </article>
-        <article>
+        <article data-reveal>
           <strong>Equipe</strong>
           <span>advocacia especializada</span>
         </article>
       </section>
 
       <section className="mission section-shell" id="sobre">
-        <article>
+        <article data-reveal>
           <span className="card-mark">01</span>
           <div>
             <h2>Compromisso</h2>
@@ -170,7 +173,7 @@ export default function Home() {
             </p>
           </div>
         </article>
-        <article>
+        <article data-reveal>
           <span className="card-mark">02</span>
           <div>
             <h2>Excelência</h2>
@@ -183,7 +186,7 @@ export default function Home() {
       </section>
 
       <section className="about section-shell">
-        <div className="portrait-wrap logo-wrap">
+        <div className="portrait-wrap logo-wrap" data-reveal="left">
           <Image
             alt="Marca Almeida Kehl Advocacia e Consultoria Jurídica"
             height={250}
@@ -191,7 +194,7 @@ export default function Home() {
             width={250}
           />
         </div>
-        <div className="about-copy">
+        <div className="about-copy" data-reveal="right">
           <p className="eyebrow">Quem somos</p>
           <h2>Mais de 12 anos no norte da Ilha de Florianópolis.</h2>
           <p>
@@ -208,12 +211,12 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="areas section-shell" id="atuacao">
+      <section className="areas section-shell" id="atuacao" data-reveal>
         <p className="section-kicker">Áreas de atuação</p>
         <h2>Suporte jurídico para pessoas, famílias e empresas.</h2>
         <div className="area-grid">
           {practiceAreas.map((area) => (
-            <article key={area.label}>
+            <article key={area.label} data-reveal>
               <span>{area.mark}</span>
               <h3>{area.label}</h3>
               <p>{area.text}</p>
@@ -223,13 +226,13 @@ export default function Home() {
       </section>
 
       <section className="process section-shell">
-        <div>
+        <div data-reveal="left">
           <p className="section-kicker">Atendimento</p>
           <h2>Presencial em Jurerê Internacional e online.</h2>
         </div>
         <div className="steps">
           {steps.map((step, index) => (
-            <article key={step}>
+            <article key={step} data-reveal="right">
               <span>{String(index + 1).padStart(2, "0")}</span>
               <p>{step}</p>
             </article>
@@ -238,13 +241,13 @@ export default function Home() {
       </section>
 
       <section className="team section-shell" id="equipe">
-        <div className="team-head">
+        <div className="team-head" data-reveal>
           <p className="section-kicker">Conheça a nossa equipe</p>
           <h2>Profissionais qualificados e comprometidos com excelência.</h2>
         </div>
         <div className="team-grid">
           {team.map((person) => (
-            <article key={person.name}>
+            <article key={person.name} data-reveal>
               <Image
                 alt={person.name}
                 height={680}
@@ -261,7 +264,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="contact section-shell" id="contato">
+      <section className="contact section-shell" id="contato" data-reveal>
         <div className="contact-panel">
           <div>
             <p className="section-kicker">Entre em contato</p>
@@ -280,7 +283,7 @@ export default function Home() {
         </div>
       </section>
 
-      <footer className="dark-cta">
+      <footer className="dark-cta" data-reveal>
         <div className="section-shell">
           <p>Atendimento jurídico especializado para conduzir sua demanda com segurança.</p>
           <a className="primary-button dark" href={whatsappUrl}>
