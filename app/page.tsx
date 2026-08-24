@@ -7,6 +7,10 @@ const whatsappDisplay = "(48) 98822-1886";
 const email = "advkehl@gmail.com";
 const address =
   "Rua das Algas, 173 - Sala 04 - Jurerê Internacional, Florianópolis - SC";
+const mapsUrl =
+  "https://www.google.com/maps/place/R.+das+Algas,+173+-+Sala+04+-+Jurer%C3%AA+Internacional,+Florian%C3%B3polis+-+SC,+88056-000";
+const mapsEmbedUrl =
+  "https://maps.google.com/maps?q=R.%20das%20Algas%2C%20173%20-%20Sala%2004%20-%20Jurer%C3%AA%20Internacional%2C%20Florian%C3%B3polis%20-%20SC&t=m&z=16&output=embed&iwloc=near";
 const whatsappUrl =
   "https://wa.me/5548988221886?text=Ol%C3%A1%2C%20Almeida%20Kehl%20Advogados%20Associados.%20Gostaria%20de%20agendar%20uma%20consulta%20jur%C3%ADdica.";
 
@@ -280,6 +284,24 @@ export default function Home() {
             <span>E-mail</span>
             <strong>{email}</strong>
           </aside>
+        </div>
+        <div className="map-card" data-reveal>
+          <iframe
+            aria-label={address}
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            src={mapsEmbedUrl}
+            title="Localização Almeida Kehl Advogados Associados"
+          />
+          <div className="map-caption">
+            <div>
+              <span>Localização</span>
+              <strong>{address}</strong>
+            </div>
+            <a href={mapsUrl} target="_blank" rel="noreferrer">
+              Abrir no Google Maps
+            </a>
+          </div>
         </div>
       </section>
 
