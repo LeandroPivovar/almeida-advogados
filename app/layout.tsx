@@ -15,14 +15,14 @@ const sans = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "Ermeson Advogados | Advogado em Florianópolis",
+  title: "Almeida Kehl Advogados Associados | Florianópolis",
   description:
-    "Atendimento jurídico em Florianópolis com orientação clara, estratégia e contato direto pelo WhatsApp.",
+    "Advocacia especializada em Florianópolis, com atendimento presencial e online nas áreas trabalhista, civil, família, sucessões e previdenciário.",
   openGraph: {
-    title: "Ermeson Advogados | Advogado em Florianópolis",
+    title: "Almeida Kehl Advogados Associados",
     description:
-      "Atendimento jurídico claro, acolhedor e estratégico no Centro de Florianópolis.",
-    images: ["/emerson-office.png"],
+      "Atendimento jurídico ético, ágil e especializado em Jurerê Internacional, Florianópolis.",
+    images: ["/almeida-office.jpg"],
   },
 };
 

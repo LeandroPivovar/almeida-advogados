@@ -1,132 +1,160 @@
 import Image from "next/image";
 import ContactForm from "./ContactForm";
 
-const phoneDisplay = "(48) 98832-5964";
+const phoneDisplay = "(48) 3304-0762";
+const whatsappDisplay = "(48) 98822-1886";
+const email = "advkehl@gmail.com";
+const address =
+  "Rua das Algas, 173 - Sala 04 - Jurerê Internacional, Florianópolis - SC";
 const whatsappUrl =
-  "https://wa.me/5548988325964?text=Ol%C3%A1%2C%20Ermeson%20Advogados.%20Gostaria%20de%20agendar%20uma%20an%C3%A1lise%20jur%C3%ADdica.";
+  "https://wa.me/5548988221886?text=Ol%C3%A1%2C%20Almeida%20Kehl%20Advogados%20Associados.%20Gostaria%20de%20agendar%20uma%20consulta%20jur%C3%ADdica.";
 
 const practiceAreas = [
   {
+    label: "Direito do Trabalho",
+    text: "Vínculo empregatício, jornada de trabalho, horas extras, férias, 13º salário, acidente de trabalho, gestação, aviso prévio e rescisão contratual.",
+    mark: "TR",
+  },
+  {
     label: "Direito Civil",
-    text: "Contratos, cobranças, responsabilidade civil e soluções para conflitos patrimoniais.",
+    text: "Ações indenizatórias, posse e usucapião, contratos, consumidor, bancário, empresarial, residência, naturalização e cidadania.",
     mark: "CV",
   },
   {
-    label: "Direito da Família",
-    text: "Orientação em divórcio, guarda, alimentos e acordos conduzidos com sensibilidade.",
-    mark: "FM",
+    label: "Famílias e Sucessões",
+    text: "Divórcio, união estável, partilha de bens, pensão alimentícia, guarda, convivência, adoção, inventário e testamento.",
+    mark: "FS",
   },
   {
-    label: "Direito Criminal",
-    text: "Atuação técnica em medidas urgentes, acompanhamento e defesa em procedimentos criminais.",
-    mark: "CR",
-  },
-  {
-    label: "Direito Digital",
-    text: "Demandas ligadas a imagem, dados, provas digitais e conflitos no ambiente online.",
-    mark: "DG",
+    label: "Direito Previdenciário",
+    text: "Aposentadoria por tempo de contribuição, idade, invalidez, aposentadoria especial, auxílios, pensão por morte e salário-maternidade.",
+    mark: "PR",
   },
 ];
 
-const reviews = [
+const team = [
   {
-    name: "Mariana Lemos de Carvalho",
-    time: "um mês atrás",
-    text: "Desde meu primeiro contato o Ermeson se mostrou muito solícito e sensível ao meu problema, me ajudando com urgência, inclusive trabalhando nos finais de semana.",
+    name: "Silvana Almeida Kehl",
+    role: "Advogada, OAB/SC 37.133",
+    image: "/silvana-almeida-kehl.jpg",
+    text: "Sócia fundadora do Almeida Kehl Advogados Associados, consolidado desde 2013 no norte da Ilha, em Canasvieiras. Especialista em Direito Previdenciário, Direito e Processo do Trabalho, Direito de Família e Sucessões.",
   },
   {
-    name: "Ayla Caroline",
-    time: "3 meses atrás",
-    text: "Sempre muito prestativo, ágil e transparente durante o processo. Passou segurança desde o início e esclareceu todas as dúvidas com clareza e atenção.",
+    name: "Wellen Oliveira Cruz",
+    role: "Advogada, OAB/SC 31.597 · OAB/PR 105.227-A",
+    image: "/wellen-oliveira-cruz.jpg",
+    text: "Pós-graduada em Direito e Processo do Trabalho, membro da Comissão de Direito do Trabalho da OAB/SC e com 14 anos de atuação na área trabalhista.",
   },
   {
-    name: "Emilin Souza",
-    time: "9 meses atrás",
-    text: "Mesmo a distância, sempre esteve esclarecendo dúvidas e me deixando segura sobre cada passo do processo.",
+    name: "Camila Arévalo",
+    role: "Advogada, OAB/MS 28.450",
+    image: "/camila-arevalo.jpeg",
+    text: "Atuação em Direito Civil, com experiência na Advocacia-Geral da União e no Tribunal de Justiça. Desenvolve soluções estratégicas para interesses individuais e empresariais.",
+  },
+  {
+    name: "Juliana Teresinha Conradi",
+    role: "Assessora Jurídica",
+    image: "/juliana-conradi.jpeg",
+    text: "Assessora jurídica com atuação nas áreas Cível e de Família, com ênfase em inventários e partilhas.",
   },
 ];
 
 const steps = [
-  "Explique sua situação pelo WhatsApp.",
-  "Receba uma primeira orientação com clareza.",
-  "Defina a estratégia jurídica e os próximos passos.",
+  "Agende sua consulta pelo WhatsApp.",
+  "Escolha atendimento presencial ou online.",
+  "Receba orientação objetiva para os próximos passos.",
 ];
 
 export default function Home() {
   return (
     <main>
       <header className="site-header">
-        <a className="brand" href="#top" aria-label="Ermeson Advogados">
-          Ermeson Advogados
+        <a
+          className="brand"
+          href="#top"
+          aria-label="Almeida Kehl Advogados Associados"
+        >
+          <Image
+            alt=""
+            aria-hidden="true"
+            height={259}
+            src="/almeida-logo.png"
+            width={290}
+          />
+          <span>Almeida Kehl</span>
         </a>
         <nav aria-label="Seções principais">
           <a href="#sobre">Sobre</a>
           <a href="#atuacao">Áreas de atuação</a>
-          <a href="#avaliacoes">Avaliações</a>
+          <a href="#equipe">Equipe</a>
         </nav>
         <a className="header-cta" href={whatsappUrl}>
-          Contato
+          Consulta
         </a>
       </header>
 
       <section className="hero section-shell" id="top">
         <div className="hero-copy">
-          <p className="eyebrow">Advogado em Florianópolis</p>
+          <p className="eyebrow">Canasvieiras · Florianópolis · SC</p>
           <div className="nameplate">
             <span />
-            <strong>Ermeson Advogados</strong>
+            <strong>Almeida Kehl</strong>
             <span />
           </div>
-          <h1>Advogado em Florianópolis, com atendimento 24 horas.</h1>
+          <h1>Advocacia especializada, presencial e online.</h1>
           <p className="hero-lede">
-            Atendimento acolhedor, estratégico e disponível para quem precisa
-            resolver uma demanda jurídica com urgência, clareza e confiança.
+            Equipe líder em Direito Trabalhista, Civil, das Famílias,
+            Previdenciário e outras áreas, com atendimento diferenciado em
+            Florianópolis.
           </p>
           <div className="hero-actions">
             <a className="primary-button" href={whatsappUrl}>
-              Falar com advogado
+              Agende a sua consulta
               <span aria-hidden="true">›</span>
             </a>
-            <p>Aberto 24 horas. Primeira conversa pelo WhatsApp.</p>
+            <p>Atendimento presencial em Jurerê Internacional e online.</p>
           </div>
         </div>
 
-        <div className="hero-visual" aria-label="Foto de Ermeson no escritório">
+        <div
+          className="hero-visual office-visual"
+          aria-label="Identidade visual Almeida Kehl Advocacia"
+        >
           <Image
-            alt="Ermeson Advogados em escritório jurídico"
-            className="hero-photo"
-            height={564}
+            alt="Almeida Kehl Advocacia e Consultoria Jurídica"
+            className="hero-photo office-photo"
+            height={472}
             priority
-            src="/emerson-office.png"
-            width={442}
+            src="/almeida-office.jpg"
+            width={505}
           />
           <div className="floating-note note-one">
-            <b>5,0</b>
-          <span>66 avaliações no Google</span>
+            <b>2013</b>
+            <span>Escritório consolidado no norte da Ilha</span>
           </div>
           <div className="floating-note note-two">
-            <b>24h</b>
-          <span>Atendimento para urgências</span>
+            <b>+12</b>
+            <span>Anos de atuação jurídica</span>
           </div>
         </div>
       </section>
 
       <section className="proof-strip" aria-label="Credenciais">
         <article>
-          <strong>66</strong>
-          <span>avaliações públicas</span>
+          <strong>2013</strong>
+          <span>atuação consolidada</span>
         </article>
         <article>
-          <strong>5,0</strong>
-          <span>nota media no Google</span>
+          <strong>Online</strong>
+          <span>consulta à distância</span>
         </article>
         <article>
-          <strong>Centro</strong>
+          <strong>Jurerê</strong>
           <span>Florianópolis, SC</span>
         </article>
         <article>
-          <strong>LGBTQ+</strong>
-          <span>empresa acolhedora</span>
+          <strong>Equipe</strong>
+          <span>advocacia especializada</span>
         </article>
       </section>
 
@@ -134,55 +162,55 @@ export default function Home() {
         <article>
           <span className="card-mark">01</span>
           <div>
-            <h2>Missao</h2>
+            <h2>Compromisso</h2>
             <p>
-              Oferecer assessoria jurídica objetiva, humana e tecnicamente
-              cuidadosa para que cada cliente entenda seu caso e decida com
-              segurança.
+              Oferecer soluções jurídicas em diversas áreas do direito, com o
+              suporte necessário para atender demandas pessoais, familiares,
+              trabalhistas e empresariais.
             </p>
           </div>
         </article>
         <article>
           <span className="card-mark">02</span>
           <div>
-            <h2>Valores</h2>
+            <h2>Excelência</h2>
             <p>
-              Comprometimento, ética, transparência, responsabilidade social e
-              respeito integral à história de cada pessoa atendida.
+              Atendimento ágil, ético e pautado na confiança em cada etapa do
+              processo, com comunicação objetiva e acompanhamento próximo.
             </p>
           </div>
         </article>
       </section>
 
       <section className="about section-shell">
-        <div className="portrait-wrap">
+        <div className="portrait-wrap logo-wrap">
           <Image
-            alt="Retrato profissional de Ermeson Advogados"
-            height={618}
-            src="/emerson-portrait.png"
-            width={403}
+            alt="Marca Almeida Kehl Advocacia e Consultoria Jurídica"
+            height={250}
+            src="/almeida-hero.jpg"
+            width={250}
           />
         </div>
         <div className="about-copy">
-          <p className="eyebrow">Quem é Ermeson Advogados?</p>
-          <h2>Presença, técnica e uma comunicação que você entende.</h2>
+          <p className="eyebrow">Quem somos</p>
+          <h2>Mais de 12 anos no norte da Ilha de Florianópolis.</h2>
           <p>
-            Em momentos jurídicos delicados, o cliente precisa de alguém que
-            explique o caminho, organize as provas e aja com responsabilidade.
-            A atuação do escritório prioriza estratégia, clareza nas
-            informações e acompanhamento próximo do início ao fim.
+            A Advocacia e Consultoria Jurídica foi fundada pela Dra. Silvana
+            Almeida Kehl e mantém endereço consolidado em Canasvieiras, região
+            privilegiada da capital catarinense.
           </p>
           <p>
-            O atendimento acontece em Florianópolis e também a distância,
-            mantendo transparência sobre riscos, prazos e alternativas de cada
-            caso.
+            O escritório atua em Direito de Família e Sucessões, Empresarial,
+            Trabalho, Civil, Consumidor e Previdenciário, além de assessoria
+            para estrangeiros que buscam residência, naturalização ou cidadania
+            brasileira.
           </p>
         </div>
       </section>
 
       <section className="areas section-shell" id="atuacao">
         <p className="section-kicker">Áreas de atuação</p>
-        <h2>Orientação jurídica para decisões importantes.</h2>
+        <h2>Suporte jurídico para pessoas, famílias e empresas.</h2>
         <div className="area-grid">
           {practiceAreas.map((area) => (
             <article key={area.label}>
@@ -196,8 +224,8 @@ export default function Home() {
 
       <section className="process section-shell">
         <div>
-          <p className="section-kicker">Como funciona</p>
-          <h2>Uma conversa clara antes de qualquer medida.</h2>
+          <p className="section-kicker">Atendimento</p>
+          <h2>Presencial em Jurerê Internacional e online.</h2>
         </div>
         <div className="steps">
           {steps.map((step, index) => (
@@ -209,22 +237,25 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="reviews section-shell" id="avaliacoes">
-        <div className="reviews-head">
-          <p className="section-kicker">Avaliações</p>
-          <h2>Clientes destacam atenção, agilidade e transparência.</h2>
+      <section className="team section-shell" id="equipe">
+        <div className="team-head">
+          <p className="section-kicker">Conheça a nossa equipe</p>
+          <h2>Profissionais qualificados e comprometidos com excelência.</h2>
         </div>
-        <div className="review-grid">
-          {reviews.map((review) => (
-            <article key={review.name}>
-              <div className="stars" aria-label="5 estrelas">
-                ★★★★★
+        <div className="team-grid">
+          {team.map((person) => (
+            <article key={person.name}>
+              <Image
+                alt={person.name}
+                height={680}
+                src={person.image}
+                width={450}
+              />
+              <div>
+                <h3>{person.name}</h3>
+                <strong>{person.role}</strong>
+                <p>{person.text}</p>
               </div>
-              <p>“{review.text}”</p>
-              <footer>
-                <strong>{review.name}</strong>
-                <span>{review.time}</span>
-              </footer>
             </article>
           ))}
         </div>
@@ -234,33 +265,31 @@ export default function Home() {
         <div className="contact-panel">
           <div>
             <p className="section-kicker">Entre em contato</p>
-            <h2>Conte seu caso e receba um direcionamento inicial.</h2>
-            <p>
-              Av. Hercílio Luz, 639 - Centro, Florianópolis - SC, 88020-000
-            </p>
+            <h2>Faça contato para realizar a sua consulta.</h2>
+            <p>{address}</p>
           </div>
           <ContactForm />
           <aside>
-            <span>Atendimento</span>
-            <strong>Aberto 24 horas</strong>
-            <span>WhatsApp</span>
+            <span>Telefone</span>
             <strong>{phoneDisplay}</strong>
-            <span>Localização</span>
-            <strong>Centro, Florianópolis</strong>
+            <span>WhatsApp</span>
+            <strong>{whatsappDisplay}</strong>
+            <span>E-mail</span>
+            <strong>{email}</strong>
           </aside>
         </div>
       </section>
 
       <footer className="dark-cta">
         <div className="section-shell">
-          <p>Poupe tempo, fale diretamente com quem pode orientar o caso.</p>
+          <p>Atendimento jurídico especializado para conduzir sua demanda com segurança.</p>
           <a className="primary-button dark" href={whatsappUrl}>
-            Solicitar atendimento agora
+            Agende a sua consulta agora
             <span aria-hidden="true">›</span>
           </a>
           <small>
-            Ermeson Advogados · {phoneDisplay} · Av. Hercílio Luz, 639 -
-            Centro, Florianópolis
+            Almeida Kehl Advogados Associados · {phoneDisplay} · WhatsApp{" "}
+            {whatsappDisplay} · {address}
           </small>
         </div>
       </footer>
